@@ -1,13 +1,12 @@
 package com.example;
+import java.util.logging.Logger;
 
 public class LegacyPrinter {
-    public void printMessage(String message) {
-        System.out.println(message);
-    }
 
-    // Intentional issue: Deprecated API usage
-    @Deprecated
-    public void printOldMessage(String message) {
-        System.out.println("OLD: " + message);
+    Logger logger = Logger.getLogger(getClass().getName());
+
+    public void printMessage(String message) {
+        logger.info(message);
     }
+    
 }
